@@ -1,0 +1,25 @@
+#nullable enable
+L0gg3r.Builder.BuilderBase<TTarget, TBuilder>
+L0gg3r.Builder.BuilderBase<TTarget, TBuilder>.Build() -> TTarget
+L0gg3r.Builder.BuilderBase<TTarget, TBuilder>.BuilderBase() -> void
+L0gg3r.Builder.BuilderBase<TTarget, TBuilder>.WithModification(System.Action<TTarget>! modification) -> TBuilder!
+L0gg3r.Builder.LoggerBuilder
+L0gg3r.Builder.LoggerBuilder.LoggerBuilder() -> void
+L0gg3r.Builder.LoggerBuilder.LoggerBuilder(string! name) -> void
+L0gg3r.Builder.LoggerBuilder.LogTo.get -> L0gg3r.Builder.LogTo!
+L0gg3r.Builder.LoggerBuilder.WithChildLogger(string! childLoggerName) -> L0gg3r.Builder.LoggerBuilder!
+L0gg3r.Builder.LoggerBuilder.WithChildLogger(string! childLoggerName, System.Action<L0gg3r.Builder.LoggerBuilder!>! childLoggerBuilderAction) -> L0gg3r.Builder.LoggerBuilder!
+L0gg3r.Builder.LoggerBuilder.WithFilter(System.Predicate<L0gg3r.LogMessage>! filter) -> L0gg3r.Builder.LoggerBuilder!
+L0gg3r.Builder.LoggerBuilder.WithMinimumLogLevel(L0gg3r.LogLevel minimumLogLevel) -> L0gg3r.Builder.LoggerBuilder!
+L0gg3r.Builder.LoggerBuilder.WithName(string! name) -> L0gg3r.Builder.LoggerBuilder!
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.LogSinkBuilder() -> void
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.WithLogMessageWriter(System.Type! logMessageWriterType) -> L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>!
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.WithLogMessageWriter<TLogMessageWriter>() -> L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>!
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.WithLogMessageWritersFrom(params System.Reflection.Assembly![]! assemblies) -> L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>!
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.WithLogMessageWritersFromAllAssemblies() -> L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>!
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.WithLogMessageWritersFromCallingAssembly() -> L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>!
+L0gg3r.Builder.LogTo
+L0gg3r.Builder.LogTo.LogSink<TLogSink, TBuilder>(L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>! logSinkBuilder) -> L0gg3r.Builder.LoggerBuilder!
+L0gg3r.Builder.LogTo.LogSink<TLogSink>(TLogSink logSink) -> L0gg3r.Builder.LoggerBuilder!
+L0gg3r.Builder.LogTo.LogTo(L0gg3r.Builder.LoggerBuilder! loggerBuilder) -> void

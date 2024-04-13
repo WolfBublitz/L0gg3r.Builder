@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>L0gg3r.Builder</name>
+    </assembly>
+    <members>
+        <member name="T:L0gg3r.Builder.BuilderBase`2">
+            <summary>
+            An abstract base class for a builder.
+            </summary>
+            <typeparam name="TTarget">The <see cref="T:System.Type"/> of the target that this builder shall build.</typeparam>
+            <typeparam name="TBuilder">The <see cref="T:System.Type"/> of the builder itself.</typeparam>
+        </member>
+        <member name="M:L0gg3r.Builder.BuilderBase`2.WithModification(System.Action{`0})">
+            <summary>
+            Adds a modification to the builder.
+            </summary>
+            <remarks>
+            A modification is an action that modifies the target object.
+            </remarks>
+            <param name="modification">The modification to add.</param>
+            <returns>This <see cref="T:L0gg3r.Builder.BuilderBase`2"/> instance.</returns>
+        </member>
+        <member name="M:L0gg3r.Builder.BuilderBase`2.Build">
+            <summary>
+            Creates and returns a new instance of <typeparamref name="TTarget"/>.
+            </summary>
+            <returns>The newly created <typeparamref name="TTarget"/>.</returns>
+        </member>
+        <member name="T:L0gg3r.Builder.LoggerBuilder">
+            <summary>
+            A builder for creating <see cref="T:L0gg3r.Logger"/> instances.
+            </summary>
+            <remarks>
+            Initializes a new instance of the <see cref="T:L0gg3r.Builder.LoggerBuilder"/> class.
+            </remarks>
+        </member>
+        <member name="M:L0gg3r.Builder.LoggerBuilder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:L0gg3r.Builder.LoggerBuilder"/> class.
+            </summary>
+        </member>
+        <member name="M:L0gg3r.Builder.LoggerBuilder.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:L0gg3r.Builder.LoggerBuilder"/> class.
+            </summary>
+            <param name="name">The name of the <see cref="T:L0gg3r.Logger"/>.</param>
+        </member>
+        <member name="P:L0gg3r.Builder.LoggerBuilder.LogTo">
+            <summary>
+            Gets a <see cref="P:L0gg3r.Builder.LoggerBuilder.LogTo"/>.
+            </summary>
+        </member>
+        <member name="P:L0gg3r.Builder.LoggerBuilder.LogSinks">
+            <summary>
+            Gets the collection of <see cref="T:L0gg3r.ILogSink"/>s.
+            </summary>
+        </member>
+        <member name="P:L0gg3r.Builder.LoggerBuilder.AsyncLogSinks">
+            <summary>
+            Gets the collection of <see cref="T:L0gg3r.ILogSink"/>s.
+            </summary>
+        </member>
+        <member name="M:L0gg3r.Builder.LoggerBuilder.WithName(System.String)">
+            <summary>
+            Creates a <see cref="T:L0gg3r.Logger"/> with the specified <paramref name="name"/>.
+            </summary>
+            <param name="name">The name of the <see cref="T:L0gg3r.Logger"/>.</param>
+            <returns>The <see cref="T:L0gg3r.Builder.LoggerBuilder"/> instance.</returns>
+        </member>
+        <member name="M:L0gg3r.Builder.LoggerBuilder.WithMinimumLogLevel(L0gg3r.LogLevel)">
+            <summary>
+            Creates a <see cref="T:L0gg3r.Logger"/> with the specified <paramref name="minimumLogLevel"/>.
+            </summary>
+            <param name="minimumLogLevel">The minium <see cref="T:L0gg3r.LogLevel"/>.</param>
+            <returns>This <see cref="T:L0gg3r.Builder.LoggerBuilder"/> instance.</returns>
+        </member>
+        <member name="M:L0gg3r.Builder.LoggerBuilder.WithFilter(System.Predicate{L0gg3r.LogMessage})">
+            <summary>
+            Creates a <see cref="T:L0gg3r.Logger"/> with the specified <paramref name="filter"/>.
+            </summary>
+            <param name="filter">The filter.</param>
+            <returns>This <see cref="T:L0gg3r.Builder.LoggerBuilder"/> instance.</returns>
+        </member>
+        <member name="M:L0gg3r.Builder.LoggerBuilder.WithChildLogger(System.String)">
+            <summary>
+            Creates a <see cref="T:L0gg3r.Logger"/> with a child logger named <paramref name="childLoggerName"/>.
+            </summary>
+            <param name="childLoggerName">The name of the child logger.</param>
+            <returns>This <see cref="T:L0gg3r.Builder.LoggerBuilder"/> instance.</returns>
+        </member>
+        <member name="M:L0gg3r.Builder.LoggerBuilder.WithChildLogger(System.String,System.Action{L0gg3r.Builder.LoggerBuilder})">
+            <summary>
+            Creates a <see cref="T:L0gg3r.Logger"/> with a child logger named <paramref name="childLoggerName"/>.
+            </summary>
+            <param name="childLoggerName">The name of the child logger.</param>
+            <param name="childLoggerBuilderAction">An action providing access to the <see cref="T:L0gg3r.Builder.LoggerBuilder"/> of the child logger.</param>
+            <returns>This <see cref="T:L0gg3r.Builder.LoggerBuilder"/> instance.</returns>
+        </member>
+        <member name="T:L0gg3r.Builder.LogSinkBuilder`2">
+            <summary>
+            A builder for creating <see cref="T:L0gg3r.ILogSink"/> instances.
+            </summary>
+            <remarks>
+            Initializes a new instance of the <see cref="T:L0gg3r.Builder.LogSinkBuilder`2"/> class.
+            </remarks>
+            <typeparam name="TLogSink">The <see cref="T:System.Type"/> of the log sink.</typeparam>
+            <typeparam name="TBuilder">The <see cref="T:System.Type"/> of the builder.</typeparam>
+        </member>
+        <member name="M:L0gg3r.Builder.LogSinkBuilder`2.WithLogMessageWriter``1">
+            <summary>
+            Registers a log message writer of type <typeparamref name="TLogMessageWriter"/>.
+            </summary>
+            <remarks>
+            This method is useful to register a single log message writer.
+            </remarks>
+            <typeparam name="TLogMessageWriter">The <see cref="T:System.Type"/> of the log message writer.</typeparam>
+            <returns>This <see cref="T:L0gg3r.Builder.LogSinkBuilder`2"/>.</returns>
+            <seealso cref="M:L0gg3r.Builder.LogSinkBuilder`2.WithLogMessageWriter(System.Type)"/>
+        </member>
+        <member name="M:L0gg3r.Builder.LogSinkBuilder`2.WithLogMessageWriter(System.Type)">
+            <summary>
+            Registers a log message writer of type <paramref name="logMessageWriterType"/>.
+            </summary>
+            <remarks>
+            This method is useful to register a single log message writer.
+            </remarks>
+            <param name="logMessageWriterType">The <see cref="T:System.Type"/> of the log message writer.</param>
+            <returns>This <see cref="T:L0gg3r.Builder.LogSinkBuilder`2"/>.</returns>
+            <seealso cref="M:L0gg3r.Builder.LogSinkBuilder`2.WithLogMessageWriter``1"/>
+        </member>
+        <member name="M:L0gg3r.Builder.LogSinkBuilder`2.WithLogMessageWritersFrom(System.Reflection.Assembly[])">
+            <summary>
+            Registers all log message writers in the specified <paramref name="assemblies"/>.
+            </summary>
+            <remarks>
+            This method is useful when all log message writers from different <paramref name="assemblies"/>.
+            </remarks>
+            <param name="assemblies">The list of <see cref="T:System.Reflection.Assembly"/>.</param>
+            <returns>This <see cref="T:L0gg3r.Builder.LogSinkBuilder`2"/>.</returns>
+        </member>
+        <member name="M:L0gg3r.Builder.LogSinkBuilder`2.WithLogMessageWritersFromAllAssemblies">
+            <summary>
+            Registers all log message writers in the current <see cref="T:System.AppDomain"/>.
+            </summary>
+            <remarks>
+            This method is useful when all log message writers in the whole <see cref="T:System.AppDomain"/> should
+            be registered.
+            </remarks>
+            <returns>This <see cref="T:L0gg3r.Builder.LogSinkBuilder`2"/>.</returns>
+            <seealso cref="P:System.AppDomain.CurrentDomain"/>
+        </member>
+        <member name="M:L0gg3r.Builder.LogSinkBuilder`2.WithLogMessageWritersFromCallingAssembly">
+            <summary>
+            Registers all log message writers from the calling <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+            <remarks>
+            This method is useful when the log message writers are in the same assembly as the
+            calling code.
+            </remarks>
+            <returns>This <see cref="T:L0gg3r.Builder.LogSinkBuilder`2"/>.</returns>
+            <seealso cref="M:System.Reflection.Assembly.GetCallingAssembly"/>
+        </member>
+        <member name="T:L0gg3r.Builder.LogTo">
+            <summary>
+            Provides methods to configure log sinks.
+            </summary>
+            <param name="loggerBuilder">The <see cref="T:L0gg3r.Builder.LoggerBuilder"/> instance.</param>
+        </member>
+        <member name="M:L0gg3r.Builder.LogTo.#ctor(L0gg3r.Builder.LoggerBuilder)">
+            <summary>
+            Provides methods to configure log sinks.
+            </summary>
+            <param name="loggerBuilder">The <see cref="T:L0gg3r.Builder.LoggerBuilder"/> instance.</param>
+        </member>
+        <member name="M:L0gg3r.Builder.LogTo.LogSink``1(``0)">
+            <summary>
+            Adds the <typeparamref name="TLogSink"/> to the logger.
+            </summary>
+            <typeparam name="TLogSink">The <see cref="T:System.Type"/> of the log sink.</typeparam>
+            <param name="logSink">The log sink instance to add.</param>
+            <returns>The <see cref="T:L0gg3r.Builder.LoggerBuilder"/> instance.</returns>
+        </member>
+        <member name="M:L0gg3r.Builder.LogTo.LogSink``2(L0gg3r.Builder.LogSinkBuilder{``0,``1})">
+            <summary>
+            Adds a new logink built by the <paramref name="logSinkBuilder"/> to the logger.
+            </summary>
+            <typeparam name="TLogSink">The <see cref="T:System.Type"/> of the log sink.</typeparam>
+            <typeparam name="TBuilder">The <see cref="T:System.Type"/> of the builder.</typeparam>
+            <param name="logSinkBuilder">The log sink builder.</param>
+            <returns>The <see cref="T:L0gg3r.Builder.LoggerBuilder"/>.</returns>
+        </member>
+    </members>
+</doc>

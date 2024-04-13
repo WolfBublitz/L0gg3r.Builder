@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "/RHRkvPwgV50P3cgXL6ZpxQQ6Rf1uW3een5cZtrY7kWzSswul9O7nFTl/rJLFwh6TLHvyVTdtKrR7CJWvvATdQ==",
+  "success": true,
+  "projectFilePath": "/Users/wolf/Coden/L0gg3r/L0gger.Builder/src/L0gg3r.Builder.csproj",
+  "expectedPackageFiles": [
+    "/Users/wolf/.nuget/packages/l0gg3r.codeanalyzer/1.0.0-preview.2/l0gg3r.codeanalyzer.1.0.0-preview.2.nupkg.sha512",
+    "/Users/wolf/.nuget/packages/microsoft.codeanalysis.publicapianalyzers/3.3.4/microsoft.codeanalysis.publicapianalyzers.3.3.4.nupkg.sha512",
+    "/Users/wolf/.nuget/packages/minver/4.3.0/minver.4.3.0.nupkg.sha512",
+    "/Users/wolf/.nuget/packages/stylecop.analyzers/1.2.0-beta.556/stylecop.analyzers.1.2.0-beta.556.nupkg.sha512",
+    "/Users/wolf/.nuget/packages/stylecop.analyzers.unstable/1.2.0.556/stylecop.analyzers.unstable.1.2.0.556.nupkg.sha512"
+  ],
+  "logs": []
+}

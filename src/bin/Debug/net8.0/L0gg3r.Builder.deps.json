@@ -1,0 +1,93 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "L0gg3r.Builder/0.0.0-preview.0": {
+        "dependencies": {
+          "L0gg3r": "1.0.0-preview.1",
+          "L0gg3r.CodeAnalyzer": "1.0.0-preview.2",
+          "Microsoft.CodeAnalysis.PublicApiAnalyzers": "3.3.4",
+          "MinVer": "4.3.0"
+        },
+        "runtime": {
+          "L0gg3r.Builder.dll": {}
+        }
+      },
+      "L0gg3r.CodeAnalyzer/1.0.0-preview.2": {
+        "dependencies": {
+          "StyleCop.Analyzers": "1.2.0-beta.556"
+        },
+        "runtime": {
+          "lib/net8.0/L0gg3r.CodeAnalyzer.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.PublicApiAnalyzers/3.3.4": {},
+      "MinVer/4.3.0": {},
+      "StyleCop.Analyzers/1.2.0-beta.556": {
+        "dependencies": {
+          "StyleCop.Analyzers.Unstable": "1.2.0.556"
+        }
+      },
+      "StyleCop.Analyzers.Unstable/1.2.0.556": {},
+      "L0gg3r/1.0.0-preview.1": {
+        "runtime": {
+          "L0gg3r.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "L0gg3r.Builder/0.0.0-preview.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "L0gg3r.CodeAnalyzer/1.0.0-preview.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sieb6Ug+WYRoZjfV9MxwtPp5PwuSmmT3pHXuriR6pP9CTkNLYVa2aQK2qCt1b4HzdZPDIm8u4xJ3e1O9GYDRqg==",
+      "path": "l0gg3r.codeanalyzer/1.0.0-preview.2",
+      "hashPath": "l0gg3r.codeanalyzer.1.0.0-preview.2.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.PublicApiAnalyzers/3.3.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kNLTfXtXUWDHVt5iaPkkiPuyHYlMgLI6SOFT4w88bfeI2vqSeGgHunFkdvlaCM8RDfcY0t2+jnesQtidRJJ/DA==",
+      "path": "microsoft.codeanalysis.publicapianalyzers/3.3.4",
+      "hashPath": "microsoft.codeanalysis.publicapianalyzers.3.3.4.nupkg.sha512"
+    },
+    "MinVer/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YNVAW3loCFW4kTwensApaZUl+7xREK75QQNOFSbsbXx2sCSm9/IHBjUHsJGn3u0UA5r/sAqrdYBNUlOFfLhUrA==",
+      "path": "minver/4.3.0",
+      "hashPath": "minver.4.3.0.nupkg.sha512"
+    },
+    "StyleCop.Analyzers/1.2.0-beta.556": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-llRPgmA1fhC0I0QyFLEcjvtM2239QzKr/tcnbsjArLMJxJlu0AA5G7Fft0OI30pHF3MW63Gf4aSSsjc5m82J1Q==",
+      "path": "stylecop.analyzers/1.2.0-beta.556",
+      "hashPath": "stylecop.analyzers.1.2.0-beta.556.nupkg.sha512"
+    },
+    "StyleCop.Analyzers.Unstable/1.2.0.556": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zvn9Mqs/ox/83cpYPignI8hJEM2A93s2HkHs8HYMOAQW0PkampyoErAiIyKxgTLqbbad29HX/shv/6LGSjPJNQ==",
+      "path": "stylecop.analyzers.unstable/1.2.0.556",
+      "hashPath": "stylecop.analyzers.unstable.1.2.0.556.nupkg.sha512"
+    },
+    "L0gg3r/1.0.0-preview.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
