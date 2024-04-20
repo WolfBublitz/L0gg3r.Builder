@@ -2,6 +2,21 @@
   "version": 1,
   "dependencies": {
     "net8.0": {
+      "L0gg3r": {
+        "type": "Direct",
+        "requested": "[1.*-*, 2.0.0)",
+        "resolved": "1.0.0-preview.7",
+        "contentHash": "O7caZVunWhP5D7PEuZvE+d3RT6ygFjIkEs/RyO0PsTgfK0InZtGYmMeep4Lm7nEkcaIrgvpoHJlckuVpX2uYRg==",
+        "dependencies": {
+          "L0gg3r.Base": "[1.0.0-preview.8, 2.0.0)"
+        }
+      },
+      "L0gg3r.Base": {
+        "type": "Direct",
+        "requested": "[1.*-*, 2.0.0)",
+        "resolved": "1.0.0-preview.8",
+        "contentHash": "zMTnJpVzDuaHaCnBZ9ZzeHLOP2gDJHjtY8WG9o5uirB0nQSqZWyK5wf0Yrqmoy4Qkoj2aLSaounh7hNBvujyOw=="
+      },
       "L0gg3r.CodeAnalyzer": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
@@ -9,6 +24,15 @@
         "contentHash": "sieb6Ug+WYRoZjfV9MxwtPp5PwuSmmT3pHXuriR6pP9CTkNLYVa2aQK2qCt1b4HzdZPDIm8u4xJ3e1O9GYDRqg==",
         "dependencies": {
           "StyleCop.Analyzers": "1.2.0-beta.556"
+        }
+      },
+      "L0gg3r.LogSinks.Base": {
+        "type": "Direct",
+        "requested": "[1.*-*, 2.0.0)",
+        "resolved": "1.0.0-preview.4",
+        "contentHash": "w9oxokL+2Vt4hxgb+kJV+94VU+Zfs81a1BcF3mQRKvu1QHLDUwGrk+WoyDFMr/wcLiRDFT6vWQV+mBrQi50mrQ==",
+        "dependencies": {
+          "L0gg3r.Base": "[1.0.0-preview.8, 2.0.0)"
         }
       },
       "Microsoft.CodeAnalysis.PublicApiAnalyzers": {
@@ -35,9 +59,6 @@
         "type": "Transitive",
         "resolved": "1.2.0.556",
         "contentHash": "zvn9Mqs/ox/83cpYPignI8hJEM2A93s2HkHs8HYMOAQW0PkampyoErAiIyKxgTLqbbad29HX/shv/6LGSjPJNQ=="
-      },
-      "l0gg3r": {
-        "type": "Project"
       }
     }
   }

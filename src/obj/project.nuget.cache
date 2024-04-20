@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "/RHRkvPwgV50P3cgXL6ZpxQQ6Rf1uW3een5cZtrY7kWzSswul9O7nFTl/rJLFwh6TLHvyVTdtKrR7CJWvvATdQ==",
+  "dgSpecHash": "4qIlO0aA6Lik0LA9i9HOK6bgFcAb3YvHgaTUbDvsPeaojOk57/q8Cflhqyt6RylO/6+8klKS0Sg5KN5UEjPu3A==",
   "success": true,
   "projectFilePath": "/Users/wolf/Coden/L0gg3r/L0gger.Builder/src/L0gg3r.Builder.csproj",
   "expectedPackageFiles": [
+    "/Users/wolf/.nuget/packages/l0gg3r/1.0.0-preview.7/l0gg3r.1.0.0-preview.7.nupkg.sha512",
+    "/Users/wolf/.nuget/packages/l0gg3r.base/1.0.0-preview.8/l0gg3r.base.1.0.0-preview.8.nupkg.sha512",
     "/Users/wolf/.nuget/packages/l0gg3r.codeanalyzer/1.0.0-preview.2/l0gg3r.codeanalyzer.1.0.0-preview.2.nupkg.sha512",
+    "/Users/wolf/.nuget/packages/l0gg3r.logsinks.base/1.0.0-preview.4/l0gg3r.logsinks.base.1.0.0-preview.4.nupkg.sha512",
     "/Users/wolf/.nuget/packages/microsoft.codeanalysis.publicapianalyzers/3.3.4/microsoft.codeanalysis.publicapianalyzers.3.3.4.nupkg.sha512",
     "/Users/wolf/.nuget/packages/minver/4.3.0/minver.4.3.0.nupkg.sha512",
     "/Users/wolf/.nuget/packages/stylecop.analyzers/1.2.0-beta.556/stylecop.analyzers.1.2.0-beta.556.nupkg.sha512",

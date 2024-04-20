@@ -7,6 +7,9 @@
 using System;
 using System.Reflection;
 
+using L0gg3r.Base;
+using L0gg3r.LogSinks.Base;
+
 namespace L0gg3r.Builder;
 
 /// <summary>
@@ -47,12 +50,17 @@ public class LogSinkBuilder<TLogSink, TBuilder> : BuilderBase<TLogSink, TBuilder
     /// <returns>This <see cref="LogSinkBuilder{TLogSink, TBuilder}"/>.</returns>
     /// <seealso cref="WithLogMessageWriter{TLogMessageWriter}()"/>
     public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWriter(Type logMessageWriterType)
+        => WithLogMessageWriter(() => Activator.CreateInstance(logMessageWriterType)!);
+
+    public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWriter(Func<object> factory)
     {
         WithModification(logSink =>
         {
             if (logSink is IHasLogMessageWriters hasLogMessageWriters)
             {
-                hasLogMessageWriters.RegisterLogmessageWriter(logMessageWriterType);
+                object instance = factory();
+
+                hasLogMessageWriters.RegisterLogMessageWriter(instance, replace: false);
             }
         });
 

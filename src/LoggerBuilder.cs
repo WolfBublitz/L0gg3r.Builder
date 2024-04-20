@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
+using L0gg3r.Base;
+
 namespace L0gg3r.Builder;
 
 /// <summary>

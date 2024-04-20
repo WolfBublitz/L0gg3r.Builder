@@ -12,11 +12,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("L0gg3r.Builder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.0-preview.0+527ae7291eb1fc52a425f854c3e60ede5c3af4e6")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0-preview.1+80abbe5136d1b8bc85d9310574fd4630ecd026ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("L0gg3r.Builder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("L0gg3r.Builder")]
-[assembly: System.Reflection.AssemblyVersionAttribute("0.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Von der MSBuild WriteCodeFragment-Klasse generiert.
 
