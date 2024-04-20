@@ -22,6 +22,7 @@
     <CollectCoverage>true</CollectCoverage>
     <CoverletOutputFormat>lcov</CoverletOutputFormat>
     <CoverletOutput>lcov.info</CoverletOutput>
+    <Include>[L0gg3r.Builder]L0gg3r.Builder.LoggerBuilder*</Include>
   </PropertyGroup>
 
   <!-- MS Test -->
@@ -72,6 +73,7 @@
     <Using Include="FluentAssertions" />
     <Using Include="Moq" />
     <Using Include="VerifyMSTest" />
+    <Using Include="L0gg3r.Builder" />
   </ItemGroup>
 
 </Project>

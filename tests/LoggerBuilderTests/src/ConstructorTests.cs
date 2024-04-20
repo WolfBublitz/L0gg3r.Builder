@@ -4,7 +4,12 @@ namespace LoggerBuilderTests.TheConstructorTests;
 public class TheConstructor
 {
     [TestMethod]
-    public void ShouldReturnAnInstance()
+    public void ShouldCreateABuilderWithoutLogSinks()
     {
+        // Arrange / Act
+        LoggerBuilder loggerBuilder = new();
+
+        // Assert
+        loggerBuilder.LogSinks.Should().BeEmpty();
     }
 }

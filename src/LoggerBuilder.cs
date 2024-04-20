@@ -61,11 +61,6 @@ public sealed class LoggerBuilder : BuilderBase<Logger, LoggerBuilder>
     /// </summary>
     internal ICollection<ILogSink> LogSinks { get; } = [];
 
-    /// <summary>
-    /// Gets the collection of <see cref="ILogSink"/>s.
-    /// </summary>
-    internal ICollection<ILogSink> AsyncLogSinks { get; } = [];
-
     // ┌────────────────────────────────────────────────────────────────────────────────┐
     // │ Public Methods                                                                 │
     // └────────────────────────────────────────────────────────────────────────────────┘
@@ -129,6 +124,7 @@ public sealed class LoggerBuilder : BuilderBase<Logger, LoggerBuilder>
     /// <returns>This <see cref="LoggerBuilder"/> instance.</returns>
     public LoggerBuilder WithChildLogger(string childLoggerName, Action<LoggerBuilder> childLoggerBuilderAction)
     {
+        ArgumentNullException.ThrowIfNull(childLoggerName, nameof(childLoggerName));
         ArgumentNullException.ThrowIfNull(childLoggerBuilderAction, nameof(childLoggerBuilderAction));
 
         LoggerBuilder childloggerBuilder = new LoggerBuilder().WithName(childLoggerName);
