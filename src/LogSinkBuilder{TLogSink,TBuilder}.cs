@@ -54,12 +54,19 @@ public class LogSinkBuilder<TLogSink, TBuilder> : BuilderBase<TLogSink, TBuilder
 
     public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWriter(Func<object> factory)
     {
+        ArgumentNullException.ThrowIfNull(factory);
+
+        object instance = factory();
+
+        return WithLogMessageWriter(instance);
+    }
+
+    public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWriter(object instance)
+    {
         WithModification(logSink =>
         {
             if (logSink is IHasLogMessageWriters hasLogMessageWriters)
             {
-                object instance = factory();
-
                 hasLogMessageWriters.RegisterLogMessageWriter(instance, replace: false);
             }
         });
