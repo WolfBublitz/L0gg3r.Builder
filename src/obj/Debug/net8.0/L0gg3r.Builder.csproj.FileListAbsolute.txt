@@ -8,10 +8,6 @@
 /Users/wolf/Coden/L0gg3r/L0gger.Builder/src/bin/Debug/net8.0/L0gg3r.Builder.dll
 /Users/wolf/Coden/L0gg3r/L0gger.Builder/src/bin/Debug/net8.0/L0gg3r.Builder.pdb
 /Users/wolf/Coden/L0gg3r/L0gger.Builder/src/bin/Debug/net8.0/L0gg3r.Builder.xml
-/Users/wolf/Coden/L0gg3r/L0gger.Builder/src/bin/Debug/net8.0/L0gg3r.dll
-/Users/wolf/Coden/L0gg3r/L0gger.Builder/src/bin/Debug/net8.0/L0gg3r.pdb
-/Users/wolf/Coden/L0gg3r/L0gger.Builder/src/bin/Debug/net8.0/L0gg3r.xml
-/Users/wolf/Coden/L0gg3r/L0gger.Builder/src/obj/Debug/net8.0/L0gg3r.B.724C74AC.Up2Date
 /Users/wolf/Coden/L0gg3r/L0gger.Builder/src/obj/Debug/net8.0/L0gg3r.Builder.dll
 /Users/wolf/Coden/L0gg3r/L0gger.Builder/src/obj/Debug/net8.0/refint/L0gg3r.Builder.dll
 /Users/wolf/Coden/L0gg3r/L0gger.Builder/src/obj/Debug/net8.0/L0gg3r.Builder.xml

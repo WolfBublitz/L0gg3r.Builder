@@ -53,12 +53,12 @@
         </member>
         <member name="P:L0gg3r.Builder.LoggerBuilder.LogSinks">
             <summary>
-            Gets the collection of <see cref="T:L0gg3r.ILogSink"/>s.
+            Gets the collection of <see cref="T:L0gg3r.Base.ILogSink"/>s.
             </summary>
         </member>
         <member name="P:L0gg3r.Builder.LoggerBuilder.AsyncLogSinks">
             <summary>
-            Gets the collection of <see cref="T:L0gg3r.ILogSink"/>s.
+            Gets the collection of <see cref="T:L0gg3r.Base.ILogSink"/>s.
             </summary>
         </member>
         <member name="M:L0gg3r.Builder.LoggerBuilder.WithName(System.String)">
@@ -68,14 +68,14 @@
             <param name="name">The name of the <see cref="T:L0gg3r.Logger"/>.</param>
             <returns>The <see cref="T:L0gg3r.Builder.LoggerBuilder"/> instance.</returns>
         </member>
-        <member name="M:L0gg3r.Builder.LoggerBuilder.WithMinimumLogLevel(L0gg3r.LogLevel)">
+        <member name="M:L0gg3r.Builder.LoggerBuilder.WithMinimumLogLevel(L0gg3r.Base.LogLevel)">
             <summary>
             Creates a <see cref="T:L0gg3r.Logger"/> with the specified <paramref name="minimumLogLevel"/>.
             </summary>
-            <param name="minimumLogLevel">The minium <see cref="T:L0gg3r.LogLevel"/>.</param>
+            <param name="minimumLogLevel">The minium <see cref="T:L0gg3r.Base.LogLevel"/>.</param>
             <returns>This <see cref="T:L0gg3r.Builder.LoggerBuilder"/> instance.</returns>
         </member>
-        <member name="M:L0gg3r.Builder.LoggerBuilder.WithFilter(System.Predicate{L0gg3r.LogMessage})">
+        <member name="M:L0gg3r.Builder.LoggerBuilder.WithFilter(System.Predicate{L0gg3r.Base.LogMessage})">
             <summary>
             Creates a <see cref="T:L0gg3r.Logger"/> with the specified <paramref name="filter"/>.
             </summary>
@@ -99,7 +99,7 @@
         </member>
         <member name="T:L0gg3r.Builder.LogSinkBuilder`2">
             <summary>
-            A builder for creating <see cref="T:L0gg3r.ILogSink"/> instances.
+            A builder for creating <see cref="T:L0gg3r.Base.ILogSink"/> instances.
             </summary>
             <remarks>
             Initializes a new instance of the <see cref="T:L0gg3r.Builder.LogSinkBuilder`2"/> class.
