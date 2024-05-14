@@ -36,9 +36,24 @@ public class LogSinkBuilder<TLogSink, TBuilder> : BuilderBase<TLogSink, TBuilder
     /// </remarks>
     /// <typeparam name="TLogMessageWriter">The <see cref="Type"/> of the log message writer.</typeparam>
     /// <returns>This <see cref="LogSinkBuilder{TLogSink, TBuilder}"/>.</returns>
-    /// <seealso cref="WithLogMessageWriter(Type)"/>
+    /// <seealso cref="WithLogMessageWriter(Type, bool)"/>
     public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWriter<TLogMessageWriter>()
-        => WithLogMessageWriter(typeof(TLogMessageWriter));
+        where TLogMessageWriter : new()
+        => WithLogMessageWriter(typeof(TLogMessageWriter), false);
+
+    /// <summary>
+    /// Registers a log message writer of type <typeparamref name="TLogMessageWriter"/>.
+    /// </summary>
+    /// <remarks>
+    /// This method is useful to register a single log message writer.
+    /// </remarks>
+    /// <typeparam name="TLogMessageWriter">The <see cref="Type"/> of the log message writer.</typeparam>
+    /// <param name="replace">A value indicating whether to replace the existing log message writer (<c>true</c>) or not (<c>false</c>).</param>
+    /// <returns>This <see cref="LogSinkBuilder{TLogSink, TBuilder}"/>.</returns>
+    /// <seealso cref="WithLogMessageWriter(Type)"/>
+    public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWriter<TLogMessageWriter>(bool replace)
+        where TLogMessageWriter : new()
+        => WithLogMessageWriter(typeof(TLogMessageWriter), replace);
 
     /// <summary>
     /// Registers a log message writer of type <paramref name="logMessageWriterType"/>.
@@ -48,26 +63,51 @@ public class LogSinkBuilder<TLogSink, TBuilder> : BuilderBase<TLogSink, TBuilder
     /// </remarks>
     /// <param name="logMessageWriterType">The <see cref="Type"/> of the log message writer.</param>
     /// <returns>This <see cref="LogSinkBuilder{TLogSink, TBuilder}"/>.</returns>
-    /// <seealso cref="WithLogMessageWriter{TLogMessageWriter}()"/>
+    /// <seealso cref="WithLogMessageWriter{TLogMessageWriter}(bool)"/>
     public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWriter(Type logMessageWriterType)
-        => WithLogMessageWriter(() => Activator.CreateInstance(logMessageWriterType)!);
+        => WithLogMessageWriter(logMessageWriterType, false);
+
+    /// <summary>
+    /// Registers a log message writer of type <paramref name="logMessageWriterType"/>.
+    /// </summary>
+    /// <remarks>
+    /// This method is useful to register a single log message writer.
+    /// </remarks>
+    /// <param name="logMessageWriterType">The <see cref="Type"/> of the log message writer.</param>
+    /// <param name="replace">A value indicating whether to replace the existing log message writer (<c>true</c>) or not (<c>false</c>).</param>
+    /// <returns>This <see cref="LogSinkBuilder{TLogSink, TBuilder}"/>.</returns>
+    /// <seealso cref="WithLogMessageWriter{TLogMessageWriter}()"/>
+    public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWriter(Type logMessageWriterType, bool replace)
+    {
+        ArgumentNullException.ThrowIfNull(logMessageWriterType);
+
+        return WithLogMessageWriter(() => Activator.CreateInstance(logMessageWriterType)!, replace);
+    }
 
     public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWriter(Func<object> factory)
+        => WithLogMessageWriter(factory, false);
+
+    public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWriter(Func<object> factory, bool replace)
     {
         ArgumentNullException.ThrowIfNull(factory);
 
         object instance = factory();
 
-        return WithLogMessageWriter(instance);
+        return WithLogMessageWriter(instance, replace);
     }
 
     public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWriter(object instance)
+        => WithLogMessageWriter(instance, false);
+
+    public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWriter(object instance, bool replace)
     {
+        ArgumentNullException.ThrowIfNull(instance);
+
         WithModification(logSink =>
         {
             if (logSink is IHasLogMessageWriters hasLogMessageWriters)
             {
-                hasLogMessageWriters.RegisterLogMessageWriter(instance, replace: false);
+                hasLogMessageWriters.RegisterLogMessageWriter(instance, replace);
             }
         });
 
@@ -82,7 +122,21 @@ public class LogSinkBuilder<TLogSink, TBuilder> : BuilderBase<TLogSink, TBuilder
     /// </remarks>
     /// <param name="assemblies">The list of <see cref="Assembly"/>.</param>
     /// <returns>This <see cref="LogSinkBuilder{TLogSink, TBuilder}"/>.</returns>
-    public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWritersFrom(params Assembly[] assemblies)
+    /// <seealso cref="WithLogMessageWritersFrom(Assembly[], bool)"/>
+    public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWritersFrom(Assembly[] assemblies)
+        => WithLogMessageWritersFrom(assemblies, false);
+
+    /// <summary>
+    /// Registers all log message writers in the specified <paramref name="assemblies"/>.
+    /// </summary>
+    /// <remarks>
+    /// This method is useful when all log message writers from different <paramref name="assemblies"/>.
+    /// </remarks>
+    /// <param name="assemblies">The list of <see cref="Assembly"/>.</param>
+    /// <param name="replace">A value indicating whether to replace the existing log message writer (<c>true</c>) or not (<c>false</c>).</param>
+    /// <returns>This <see cref="LogSinkBuilder{TLogSink, TBuilder}"/>.</returns>
+    /// <seealso cref="WithLogMessageWritersFrom(Assembly[])"/>
+    public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWritersFrom(Assembly[] assemblies, bool replace)
     {
         ArgumentNullException.ThrowIfNull(assemblies);
 
@@ -92,7 +146,7 @@ public class LogSinkBuilder<TLogSink, TBuilder> : BuilderBase<TLogSink, TBuilder
             {
                 if (type.GetCustomAttribute<LogMessageWriterAttribute<TLogSink>>() is not null)
                 {
-                    WithLogMessageWriter(type);
+                    WithLogMessageWriter(type, replace);
                 }
             }
         }
@@ -109,8 +163,23 @@ public class LogSinkBuilder<TLogSink, TBuilder> : BuilderBase<TLogSink, TBuilder
     /// </remarks>
     /// <returns>This <see cref="LogSinkBuilder{TLogSink, TBuilder}"/>.</returns>
     /// <seealso cref="AppDomain.CurrentDomain"/>
+    /// <seealso cref="WithLogMessageWritersFromAllAssemblies(bool)"/>
     public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWritersFromAllAssemblies()
-        => WithLogMessageWritersFrom(AppDomain.CurrentDomain.GetAssemblies());
+        => WithLogMessageWritersFromAllAssemblies(false);
+
+    /// <summary>
+    /// Registers all log message writers in the current <see cref="AppDomain"/>.
+    /// </summary>
+    /// <remarks>
+    /// This method is useful when all log message writers in the whole <see cref="AppDomain"/> should
+    /// be registered.
+    /// </remarks>
+    /// <param name="replace">A value indicating whether to replace the existing log message writer (<c>true</c>) or not (<c>false</c>).</param>
+    /// <returns>This <see cref="LogSinkBuilder{TLogSink, TBuilder}"/>.</returns>
+    /// <seealso cref="AppDomain.CurrentDomain"/>
+    /// <seealso cref="WithLogMessageWritersFromAllAssemblies()"/>
+    public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWritersFromAllAssemblies(bool replace)
+        => WithLogMessageWritersFrom(AppDomain.CurrentDomain.GetAssemblies(), replace);
 
     /// <summary>
     /// Registers all log message writers from the calling <see cref="Assembly"/>.
@@ -121,6 +190,21 @@ public class LogSinkBuilder<TLogSink, TBuilder> : BuilderBase<TLogSink, TBuilder
     /// </remarks>
     /// <returns>This <see cref="LogSinkBuilder{TLogSink, TBuilder}"/>.</returns>
     /// <seealso cref="Assembly.GetCallingAssembly"/>
+    /// <seealso cref="WithLogMessageWritersFromCallingAssembly(bool)"/>
     public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWritersFromCallingAssembly()
-        => WithLogMessageWritersFrom(Assembly.GetCallingAssembly());
+        => WithLogMessageWritersFrom([Assembly.GetCallingAssembly()], false);
+
+    /// <summary>
+    /// Registers all log message writers from the calling <see cref="Assembly"/>.
+    /// </summary>
+    /// <remarks>
+    /// This method is useful when the log message writers are in the same assembly as the
+    /// calling code.
+    /// </remarks>
+    /// <param name="replace">A value indicating whether to replace the existing log message writer (<c>true</c>) or not (<c>false</c>).</param>
+    /// <returns>This <see cref="LogSinkBuilder{TLogSink, TBuilder}"/>.</returns>
+    /// <seealso cref="Assembly.GetCallingAssembly"/>
+    /// <seealso cref="WithLogMessageWritersFromCallingAssembly()"/>
+    public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWritersFromCallingAssembly(bool replace)
+        => WithLogMessageWritersFrom([Assembly.GetCallingAssembly()], replace);
 }
