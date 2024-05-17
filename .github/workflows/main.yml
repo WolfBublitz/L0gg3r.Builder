@@ -1,0 +1,48 @@
+name: Build and Publish
+
+on:
+  push:
+    branches: "*"
+    tags: "*"
+  pull_request:
+    branches: "*"
+  release:
+    types:
+      - created
+
+jobs:
+  BuildNugetPackage:
+    name: Build Nuget Package
+    uses: ./.github/workflows/build-nuget-package.yml
+    with:
+      dotnet-version: 8.0.x
+      configuration: Release
+
+  LoggerBuilderTests:
+    name: Disposable Tests
+    needs: [BuildNugetPackage]
+    uses: ./.github/workflows/execute-test.yml
+    with:
+      dotnet-version: 8.0.x
+      configuration: Release
+      project-path: ./tests/DisposableTests/src
+
+  LogSinkBuilderTests:
+    name: LogLevel Tests
+    needs: [BuildNugetPackage]
+    uses: ./.github/workflows/execute-test.yml
+    with:
+      dotnet-version: 8.0.x
+      configuration: Release
+      project-path: ./tests/LogLevelTests/src
+
+  PublishToGithub:
+    name: Publish to Github
+    needs: [
+      LoggerBuilderTests,
+      LogSinkBuilderTests,
+    ]
+    uses: ./.github/workflows/publish-to-github.yml
+    with:
+      package-path: ./**/*.nupkg
+    if: github.event_name == 'release' && github.event.action == 'created'
