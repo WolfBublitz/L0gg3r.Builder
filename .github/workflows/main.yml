@@ -25,7 +25,7 @@ jobs:
     with:
       dotnet-version: 8.0.x
       configuration: Release
-      project-path: ./tests/DisposableTests/src
+      project-path: ./tests/LoggerBuilderTests/src
 
   LogSinkBuilderTests:
     name: LogSinkBuilder Tests
@@ -34,7 +34,7 @@ jobs:
     with:
       dotnet-version: 8.0.x
       configuration: Release
-      project-path: ./tests/LogLevelTests/src
+      project-path: ./tests/LogSinkBuilderTests/src
 
   PublishToGithub:
     name: Publish to Github
