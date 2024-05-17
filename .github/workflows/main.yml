@@ -19,7 +19,7 @@ jobs:
       configuration: Release
 
   LoggerBuilderTests:
-    name: Disposable Tests
+    name: LoggerBuilder Tests
     needs: [BuildNugetPackage]
     uses: ./.github/workflows/execute-test.yml
     with:
@@ -28,7 +28,7 @@ jobs:
       project-path: ./tests/DisposableTests/src
 
   LogSinkBuilderTests:
-    name: LogLevel Tests
+    name: LogSinkBuilder Tests
     needs: [BuildNugetPackage]
     uses: ./.github/workflows/execute-test.yml
     with:
