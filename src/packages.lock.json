@@ -14,8 +14,8 @@
       "L0gg3r.Base": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
-        "resolved": "1.0.0-preview.8",
-        "contentHash": "zMTnJpVzDuaHaCnBZ9ZzeHLOP2gDJHjtY8WG9o5uirB0nQSqZWyK5wf0Yrqmoy4Qkoj2aLSaounh7hNBvujyOw=="
+        "resolved": "1.0.0-preview.11",
+        "contentHash": "I1vg8aTRYB+7LBK8eBF1pJKuMn/AT6De6RTd5H61IN6I4JIuYO5X+2//hlh5Sxgskl483tdNeQDeSOIvRFnSKQ=="
       },
       "L0gg3r.CodeAnalyzer": {
         "type": "Direct",
@@ -29,8 +29,8 @@
       "L0gg3r.LogSinks.Base": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
-        "resolved": "1.0.0-preview.4",
-        "contentHash": "w9oxokL+2Vt4hxgb+kJV+94VU+Zfs81a1BcF3mQRKvu1QHLDUwGrk+WoyDFMr/wcLiRDFT6vWQV+mBrQi50mrQ==",
+        "resolved": "1.0.0-preview.5",
+        "contentHash": "Pjoc15zJy/dz5YEZiJSdAmBR+dTl/sph5+ViUbOtOdPqeb82OUH2CrQXCJuzmzfIzM/NtAOwV2lkWzsLEioMkg==",
         "dependencies": {
           "L0gg3r.Base": "[1.0.0-preview.8, 2.0.0)"
         }

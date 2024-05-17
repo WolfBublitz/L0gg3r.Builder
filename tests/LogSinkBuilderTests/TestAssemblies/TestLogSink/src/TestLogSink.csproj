@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../../../../src/L0gg3r.Builder.csproj" />
+    <PackageReference Include="L0gg3r.LogSinks.Base" Version="[1.*-*, 2)" />
+  </ItemGroup>
+
+</Project>

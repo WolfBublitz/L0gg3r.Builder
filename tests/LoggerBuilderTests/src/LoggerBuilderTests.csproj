@@ -20,9 +20,8 @@
   <!-- coverlet configuration -->
   <PropertyGroup>
     <CollectCoverage>true</CollectCoverage>
-    <CoverletOutputFormat>lcov</CoverletOutputFormat>
-    <CoverletOutput>lcov.info</CoverletOutput>
-    <Include>[L0gg3r.Builder]L0gg3r.Builder.LoggerBuilder*</Include>
+    <CoverletOutputFormat>lcov,json</CoverletOutputFormat>
+    <Include>[L0gg3r.Builder]L0gg3r.Builder.LoggerBuilder</Include>
   </PropertyGroup>
 
   <!-- MS Test -->

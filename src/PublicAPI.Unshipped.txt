@@ -1,0 +1,7 @@
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.WithFilter(System.Predicate<L0gg3r.Base.LogMessage>! filter) -> L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>!
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.WithLogMessageWriter(object! instance) -> L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>!
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.WithLogMessageWriter(object! instance, bool replace) -> L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>!
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.WithLogMessageWriter(System.Type! logMessageWriterType, bool replace) -> L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>!
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.WithLogMessageWriter<TLogMessageWriter>(bool replace) -> L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>!
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.WithLogMessageWritersFromAllAssemblies(bool replace) -> L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>!
+L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder>.WithLogMessageWritersFromCallingAssembly(bool replace) -> L0gg3r.Builder.LogSinkBuilder<TLogSink, TBuilder!>!

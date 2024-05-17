@@ -207,4 +207,27 @@ public class LogSinkBuilder<TLogSink, TBuilder> : BuilderBase<TLogSink, TBuilder
     /// <seealso cref="WithLogMessageWritersFromCallingAssembly()"/>
     public LogSinkBuilder<TLogSink, TBuilder> WithLogMessageWritersFromCallingAssembly(bool replace)
         => WithLogMessageWritersFrom([Assembly.GetCallingAssembly()], replace);
+
+    /// <summary>
+    /// Adds the <paramref name="filter"/> to the log sink.
+    /// </summary>
+    /// <param name="filter">The filter to add.</param>
+    /// <returns>This <see cref="LogSinkBuilder{TLogSink, TBuilder}"/>.</returns>
+    /// <exception cref="ArgumentNullException">Thrown when the <paramref name="filter"/> is <c>null</c>.</exception>
+    public LogSinkBuilder<TLogSink, TBuilder> WithFilter(Predicate<LogMessage> filter)
+    {
+        ArgumentNullException.ThrowIfNull(filter);
+
+        return WithModification(logSink =>
+        {
+            if (logSink is IHasLogMessageFilters hasLogMessageFilters)
+            {
+                hasLogMessageFilters.AddFilter(filter);
+            }
+            else
+            {
+                throw new InvalidOperationException("The log sink does not implement IHasLogMessageFilters.");
+            }
+        });
+    }
 }

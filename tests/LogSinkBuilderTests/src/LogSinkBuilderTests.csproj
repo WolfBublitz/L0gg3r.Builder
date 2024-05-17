@@ -10,6 +10,13 @@
   <!-- Project under test -->
   <ItemGroup>
     <ProjectReference Include="../../../src/L0gg3r.Builder.csproj" />
+    <ProjectReference Include="../TestAssemblies/TestLogSink/src/TestLogSink.csproj" />
+  </ItemGroup>
+
+  <!-- Test Assemblies -->
+  <ItemGroup>
+    <ProjectReference Include="../TestAssemblies/TestAssembly1/src/TestAssembly1.csproj" />
+    <ProjectReference Include="../TestAssemblies/TestAssembly2/src/TestAssembly2.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -22,6 +29,7 @@
     <CollectCoverage>true</CollectCoverage>
     <CoverletOutputFormat>lcov</CoverletOutputFormat>
     <CoverletOutput>lcov.info</CoverletOutput>
+    <Include>[L0gg3r.Builder]L0gg3r.Builder.LogSinkBuilder*</Include>
   </PropertyGroup>
 
   <!-- MS Test -->
