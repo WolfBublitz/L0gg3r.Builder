@@ -29,10 +29,10 @@
       "L0gg3r.LogSinks.Base": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
-        "resolved": "1.0.0-preview.5",
-        "contentHash": "Pjoc15zJy/dz5YEZiJSdAmBR+dTl/sph5+ViUbOtOdPqeb82OUH2CrQXCJuzmzfIzM/NtAOwV2lkWzsLEioMkg==",
+        "resolved": "1.0.0-preview.6",
+        "contentHash": "q+uu8AydxetsdLAT9ZJWjf5++Auh968hIsmkMQPXzCDEl38eZpoh2J4Ei0zcBCTvClOHfTGP/5PteCKGrKjSKw==",
         "dependencies": {
-          "L0gg3r.Base": "[1.0.0-preview.8, 2.0.0)"
+          "L0gg3r.Base": "[1.0.0-preview.11, 2.0.0)"
         }
       },
       "Microsoft.CodeAnalysis.PublicApiAnalyzers": {

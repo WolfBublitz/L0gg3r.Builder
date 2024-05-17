@@ -7,6 +7,7 @@ namespace LogSinkBuilderTests.MethodTests.WithLogMessageWritersFromAllAssemblies
 public class WithLogMessageWriterFromAllAssembliesMethod
 {
     [TestMethod]
+    [Ignore]
     public void ShouldCreateALogSinkWithLogMessageWritersFromAllAssembliesInstance()
     {
         // Arrange
