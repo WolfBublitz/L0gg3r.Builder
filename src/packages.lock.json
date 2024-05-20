@@ -5,17 +5,17 @@
       "L0gg3r": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
-        "resolved": "1.0.0-preview.7",
-        "contentHash": "O7caZVunWhP5D7PEuZvE+d3RT6ygFjIkEs/RyO0PsTgfK0InZtGYmMeep4Lm7nEkcaIrgvpoHJlckuVpX2uYRg==",
+        "resolved": "1.0.0-preview.8",
+        "contentHash": "4KwHbWhp5Y5PH2LFhn/ebh+KNjy7Lt6Xphmn1ADGEhHnkm9SaHA4ZfZDE+/uiEwEuLXsBYAvTZ8HyGsYv4HHkw==",
         "dependencies": {
-          "L0gg3r.Base": "[1.0.0-preview.8, 2.0.0)"
+          "L0gg3r.Base": "[1.0.0-preview.13, 2.0.0)"
         }
       },
       "L0gg3r.Base": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
-        "resolved": "1.0.0-preview.11",
-        "contentHash": "I1vg8aTRYB+7LBK8eBF1pJKuMn/AT6De6RTd5H61IN6I4JIuYO5X+2//hlh5Sxgskl483tdNeQDeSOIvRFnSKQ=="
+        "resolved": "1.0.0-preview.13",
+        "contentHash": "JxHFwmE2nCQC6GDH2xSdpbvvwJo9MTHl3xeyjc95ei/oHXpTrlptAWIq840FRmMgwtwWJJDWqsPB31iTqTwZiA=="
       },
       "L0gg3r.CodeAnalyzer": {
         "type": "Direct",

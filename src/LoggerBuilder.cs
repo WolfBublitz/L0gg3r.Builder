@@ -29,9 +29,6 @@ public sealed class LoggerBuilder : BuilderBase<Logger, LoggerBuilder>
     /// </summary>
     public LoggerBuilder()
     {
-        string loggerName = Assembly.GetCallingAssembly().GetName().Name ?? "Logger";
-
-        WithModification(logger => logger.Name = loggerName);
     }
 
     /// <summary>
